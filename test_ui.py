@@ -19,9 +19,9 @@ def registrar_resultado(nombre_prueba, esperado, obtenido):
 
 def uat_1_campos_vacios():
     driver.refresh()
-    time.sleep(1)
+    time.sleep(5)
     driver.find_element(By.ID, "btnEnviar").click()
-    time.sleep(1)
+    time.sleep(5)
     mensaje = driver.find_element(By.ID, "mensaje").text
     registrar_resultado(
         "UAT-1",
@@ -31,12 +31,12 @@ def uat_1_campos_vacios():
 
 def uat_2_correo_invalido():
     driver.refresh()
-    time.sleep(1)
+    time.sleep(5)
     driver.find_element(By.ID, "nombre").send_keys("Ana Torres")
     driver.find_element(By.ID, "correo").send_keys("ana@")
     Select(driver.find_element(By.ID, "curso")).select_by_value("ui")
     driver.find_element(By.ID, "btnEnviar").click()
-    time.sleep(1)
+    time.sleep(5)
     mensaje = driver.find_element(By.ID, "mensaje").text
     registrar_resultado(
         "UAT-2",
@@ -46,12 +46,12 @@ def uat_2_correo_invalido():
 
 def uat_3_registro_exitoso():
     driver.refresh()
-    time.sleep(1)
+    time.sleep(5)
     driver.find_element(By.ID, "nombre").send_keys("Ana Torres")
     driver.find_element(By.ID, "correo").send_keys("ana@email.com")
     Select(driver.find_element(By.ID, "curso")).select_by_value("ui")
     driver.find_element(By.ID, "btnEnviar").click()
-    time.sleep(1)
+    time.sleep(5)
     mensaje = driver.find_element(By.ID, "mensaje").text
     registrar_resultado(
         "UAT-3",
